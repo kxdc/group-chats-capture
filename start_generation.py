@@ -62,4 +62,3 @@ if __name__ == '__main__':
                       exitCallback=after_exit)
 
     itchat.run()
-    print(filename)

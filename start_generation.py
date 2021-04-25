@@ -7,6 +7,7 @@ from pathlib import Path
 @itchat.msg_register([TEXT, PICTURE, RECORDING, ATTACHMENT, VIDEO], isGroupChat=True)
 def information(msg):
 
+    # collect following field of received group char message
     msg_group_name = msg['User']['NickName']
     msg_from_uname = msg['FromUserName']
     msg_nickname = msg['ActualNickName']
@@ -23,8 +24,10 @@ def information(msg):
                          fname = msg_from_uname)
     print(single_msg)
 
-    pathname = date.today().strftime("%b-%d-%Y")
+    # save the txt file with the name of group name
+    # locate the txt file in a path named by date
     filename = pathname + '/' + msg_group_name + '.txt'
+    pathname = date.today().strftime("%b-%d-%Y")
     Path(pathname).mkdir(parents=True, exist_ok=True)
     with open(filename, 'a') as writer:
         writer.write(single_msg)

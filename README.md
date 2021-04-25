@@ -8,7 +8,7 @@ Powered by [ItChat](https://github.com/littlecodersh/itchat).
 
 Works and tested on python3.8.
 
-## Steps
+## Messages Generation Steps
 
 ### Install dependency
 
@@ -18,7 +18,7 @@ Works and tested on python3.8.
 
 python start_generation.py # Hit `Ctrl + C` to stop it
 
-## Data description
+## Data Description
 
 All of messages from one single group chat in one day will be stored in a txt
 file, which has the same name of it. And all of files located in a path named

@@ -39,6 +39,12 @@ def after_login():
             .format(
                 stime = ctime(time()),
                 gname = target_group_name))
+    else:
+        print('[{stime}]: not found group chat "{gname}" !!!'
+            .format(
+                stime = ctime(time()),
+                gname = target_group_name))
+        exit(1)
 
 def after_exit():
     print("exit !!")
@@ -46,7 +52,7 @@ def after_exit():
 if __name__ == '__main__':
 
     filename = ''
-    target_group_name = ''
+    target_group_name = '' # check whether the group is found
     itchat.auto_login(enableCmdQR=2,
                       hotReload=True,
                       loginCallback=after_login,

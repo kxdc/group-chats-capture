@@ -62,7 +62,7 @@ def process_files(today_filename, past_filename, stop_time):
 
 if __name__=='__main__':
 
-    last_date = datetime.now() - timedelta(5)
+    last_date = datetime.now() - timedelta(1)
     last_path = datetime.strftime(last_date, "%b-%d-%Y")
     today_path = date.today().strftime("%b-%d-%Y")
     stop_time_str = '16:00:00'

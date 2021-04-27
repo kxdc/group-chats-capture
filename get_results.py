@@ -3,6 +3,7 @@ import re
 from datetime import date, datetime, timedelta
 from collections import Counter
 
+
 def exists_file(filename):
 
     if not os.path.exists(filename):
@@ -11,6 +12,7 @@ def exists_file(filename):
     else:
         print("processing ", filename)
         return True
+
 
 def update_dict(f_dict, line, c_stop, is_today):
 
@@ -40,6 +42,7 @@ def update_dict(f_dict, line, c_stop, is_today):
         count = frequency_dict[user_name] + 1
         frequency_dict[user_name] = count
 
+
 def process_files(today_filename, past_filename, stop_time):
 
     c_stop_time = datetime.strptime(stop_time, '%H:%M:%S').time()
@@ -56,11 +59,14 @@ def process_files(today_filename, past_filename, stop_time):
         for past_line in past_f:
             update_dict(frequency_dict, past_line, c_stop_time, False)
 
-    sorted_result = sorted(frequency_dict.items(), key=lambda x: x[1], reverse=True)
+    sorted_result = sorted(frequency_dict.items(),
+                           key=lambda x: x[1],
+                           reverse=True)
 
     return sorted_result
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
 
     last_date = datetime.now() - timedelta(1)
     last_path = datetime.strftime(last_date, "%b-%d-%Y")

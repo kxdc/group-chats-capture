@@ -29,6 +29,7 @@ def update_dict(f_dict, line, c_stop, is_today):
     send_time = messages[5].split()[3]
     c_send_time = datetime.strptime(send_time, '%H:%M:%S').time()
 
+    # collect the messages sent in a continuous 24 hours start from c_stop
     if is_today:
         if c_send_time > c_stop:
             return

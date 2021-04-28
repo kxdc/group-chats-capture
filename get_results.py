@@ -48,14 +48,12 @@ def process_files(today_filename, past_filename, stop_time):
 
     c_stop_time = datetime.strptime(stop_time, '%H:%M:%S').time()
 
-    exists = exists_file(today_filename)
-    if exists:
+    if exists_file(today_filename):
         today_f = open(today_filename, 'r')
         for today_line in today_f:
             update_dict(frequency_dict, today_line, c_stop_time, True)
 
-    exists = exists_file(past_filename)
-    if exists:
+    if exists_file(past_filename):
         past_f = open(past_filename, 'r')
         for past_line in past_f:
             update_dict(frequency_dict, past_line, c_stop_time, False)

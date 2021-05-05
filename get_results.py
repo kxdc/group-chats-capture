@@ -1,7 +1,6 @@
 import os
 import re
 from datetime import date, datetime, timedelta
-from collections import Counter
 
 
 def exists_file(filename):

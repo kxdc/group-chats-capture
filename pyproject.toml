@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "group-chats-capture"
+version = "0.1.0"
+description = "Python Project of group-chats-capture"
+authors = ["kxdc <kvuexlu@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.comkxdc/group-chats-capture"
+repository = "https://github.com/kxdc/group-chats-capture"
+keywords = ["wechat"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
